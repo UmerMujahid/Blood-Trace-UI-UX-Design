@@ -1,15 +1,17 @@
 import BloodTraceLogo from './BloodTraceLogo.jsx'
 import { Icon } from '@iconify/react'
 import logo from '../Images/logo.png'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { useState } from 'react'
 
 
 function Navbar() {
+    const [activeTab, setActiveTab] = useState('')
     return (
 
-        <nav  className="navbar-container z-999 fixed left-0 right-0 top-0 flex justify-between items-center p-[0.25] bg-white">
+        <nav className="navbar-container z-999 fixed left-0 right-0 top-0 flex justify-between items-center p-[0.25] bg-white">
 
-            <Link to="/" className='cursor-pointer'>
+            <NavLink to="/" className='cursor-pointer'>
                 <div className='flex flex-row justify-center items-center'>
                     <BloodTraceLogo logo={logo} />
                     <div className='flex-col justify-center-safe'>
@@ -17,14 +19,14 @@ function Navbar() {
                         <div className='text-xs text-gray-600 -mt-1'>Visual Donor Locator</div>
                     </div>
                 </div>
-            </Link>
+            </NavLink>
 
 
             <div className='flex gap-6 justify-center items-center'>
 
-                <Link to="/dashboard">
-                    <div className='text-sm font-medium'>Find Donors</div>
-                </Link>
+                <NavLink className={({ isActive }) => `${isActive ? 'bg-blood-primary text-white p-1 px-2 rounded-sm' : ""}`} to="/dashboard">
+                    <div className={`text-sm font-medium `}>Find Donors</div>
+                </NavLink>
 
 
                 <div className='flex justify-center items-center gap-1.5'>

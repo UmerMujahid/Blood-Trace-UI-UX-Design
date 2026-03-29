@@ -147,5 +147,7 @@ const bloodCompatibility = {
     'AB+': ['O-', 'O+', 'A-', 'A+', 'B-', 'B+', 'AB-', 'AB+']
 }
 
+const bloodTypes = ['O-', 'O+', 'A-', 'A+', 'B-', 'B+', 'AB-', 'AB+']
 
-export { bloodDonors, bloodCompatibility };
+
+export { bloodDonors, bloodCompatibility, bloodTypes };
