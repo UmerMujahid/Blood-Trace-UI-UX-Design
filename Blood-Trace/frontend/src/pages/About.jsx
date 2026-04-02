@@ -44,7 +44,7 @@ function About() {
                     <h3 className="text-2xl font-bold mb-6 text-center">Key Features</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                        <div className="bg-[#F0FFF4] border border-[#E0FFE8] rounded-xl p-6">
+                        <div className="bg-[#ebfef0] border border-[#E0FFE8] rounded-xl p-6">
                             <div className="flex justify-between mb-4">
                                 <h4 className="font-bold text-lg leading-tight w-2/3">Medical-Minimalist UI</h4>
                                 <Icon icon="mdi:pulse" className="w-6 h-6 text-green-400" />
@@ -54,7 +54,7 @@ function About() {
                             </p>
                         </div>
 
-                        <div className="bg-[#F0F7FF] border border-[#E0EFFF] rounded-xl p-6">
+                        <div className="bg-[#e9f3ff] border border-[#E0EFFF] rounded-xl p-6">
                             <div className="flex justify-between mb-4">
                                 <h4 className="font-bold text-lg leading-tight w-2/3">Interactive Geolocation</h4>
                                 <Icon icon="mdi:map-marker-outline" className="w-6 h-6 text-blue-400" />
@@ -64,7 +64,7 @@ function About() {
                             </p>
                         </div>
 
-                        <div className="bg-[#FFF0F0] border border-[#FFE0E0] rounded-xl p-6">
+                        <div className="bg-[#ffebeb] border border-[#FFE0E0] rounded-xl p-6">
                             <div className="flex justify-between mb-4">
                                 <h4 className="font-bold text-lg leading-tight w-2/3">One-Click Emergency Alert</h4>
                                 <Icon icon="mdi:clock-outline" className="w-6 h-6 text-red-400" />

@@ -9,7 +9,7 @@ function Navbar() {
     const [activeTab, setActiveTab] = useState('')
     return (
 
-        <nav className="navbar-container z-999 fixed left-0 right-0 top-0 flex justify-between items-center p-[0.25] bg-white">
+        <nav className="navbar-container z-999 fixed left-0 right-0 top-0 flex justify-between items-center p-[0.25] bg-white shadow-sm border-b border-gray-100">
 
             <NavLink to="/" className='cursor-pointer'>
                 <div className='flex flex-row justify-center items-center'>
@@ -28,7 +28,7 @@ function Navbar() {
                     <div className={`text-sm font-medium `}>Find Donors</div>
                 </NavLink>
 
-                <NavLink to="/register-donor" className={({isActive})=>`${isActive?'bg-blood-primary text-white p-1 px-2 rounded-sm':''}`} >
+                <NavLink to="/register-donor" className={({ isActive }) => `${isActive ? 'bg-blood-primary text-white p-1 px-2 rounded-sm' : ''}`} >
                     <div className='flex justify-center items-center gap-1.5'>
                         <Icon
                             icon='mdi:register-outline'
@@ -39,7 +39,7 @@ function Navbar() {
                 </NavLink>
 
 
-                <NavLink to="/about" className={({isActive})=>`${isActive?'bg-blood-primary text-white p-1 px-2 rounded-sm':''}`} >
+                <NavLink to="/about" className={({ isActive }) => `${isActive ? 'bg-blood-primary text-white p-1 px-2 rounded-sm' : ''}`} >
                     <div className='flex justify-center items-center gap-1.5'>
                         <Icon
                             icon='mdi:about-circle-outline'
