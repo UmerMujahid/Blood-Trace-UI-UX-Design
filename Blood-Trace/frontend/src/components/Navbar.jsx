@@ -39,13 +39,15 @@ function Navbar() {
                 </NavLink>
 
 
-                <div className='flex justify-center items-center gap-1.5'>
-                    <Icon
-                        icon='mdi:about-circle-outline'
-                        className='text-black mr-1 w-5.5 h-5.5'
-                    ></Icon>
-                    <div className='text-sm font-medium'>About</div>
-                </div>
+                <NavLink to="/about" className={({isActive})=>`${isActive?'bg-blood-primary text-white p-1 px-2 rounded-sm':''}`} >
+                    <div className='flex justify-center items-center gap-1.5'>
+                        <Icon
+                            icon='mdi:about-circle-outline'
+                            className='mr-1 w-5.5 h-5.5'
+                        ></Icon>
+                        <div className='text-sm font-medium'>About</div>
+                    </div>
+                </NavLink>
 
                 <div className='flex justify-center items-center gap-1.5'>
                     <Icon
