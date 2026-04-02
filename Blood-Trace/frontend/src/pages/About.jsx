@@ -4,21 +4,18 @@ import { Icon } from '@iconify/react'
 
 function About() {
     return (
-        <div className="w-full flex-col font-sans mb-16 mt-20">
-            {/* Hero Section */}
-            <div className="bg-[#D92D20] text-white w-full py-16 flex flex-col items-center justify-center text-center px-4">
+        <div className="w-full flex-col font-sans pb-16 bg-white">
+            <div className="bg-[#D92D20] text-white w-full py-7 flex flex-col items-center justify-center text-center">
                 <div className="bg-white rounded-full p-2 mb-4">
                     <Icon icon="mdi:water-drop" className="w-10 h-10 text-[#D92D20]" />
                 </div>
-                <h1 className="text-4xl font-bold mb-2">Blood-Trace</h1>
+                <h1 className="text-3xl font-bold mb-2">Blood-Trace</h1>
                 <h2 className="text-xl font-medium mb-1">Visual Blood Donor Locator System</h2>
-                <p className="text-sm font-light">Transforming emergency healthcare through thoughtful UI/UX design</p>
+                <p className="text-x1 font-light">Transforming emergency healthcare through thoughtful UI/UX design</p>
             </div>
 
-            <div className="w-full max-w-4xl mx-auto px-4 mt-12 flex flex-col gap-16">
-                
-                {/* Our Mission */}
-                <section className="border border-gray-200 rounded-xl p-8 bg-[#FAFAFA]">
+            <div className="w-full max-w-5xl mx-auto px-4 mt-4 flex flex-col gap-12">
+                <section className="mt-6 border border-gray-200 rounded-xl p-8 bg-[#eeebebc7]">
                     <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
                     <p className="text-gray-700 leading-relaxed mb-4">
                         Blood-Trace is a conceptual UI/UX-focused system designed to improve the experience of finding blood donors during medical emergencies.
@@ -28,14 +25,13 @@ function About() {
                     </p>
                 </section>
 
-                {/* The Problem We Address */}
-                <section>
+                <section className='m-1'>
                     <h3 className="text-2xl font-bold mb-6 text-center">The Problem We Address</h3>
-                    <div className="bg-[#FFF0F0] border border-[#FFE0E0] rounded-xl p-8">
-                        <p className="text-gray-800 leading-relaxed mb-6">
+                    <div className="bg-[#fcefef] border border-[#FFE0E0] rounded-xl p-8">
+                        <p className="text-gray-800 mb-6">
                             In emergency healthcare situations, finding a blood donor in Pakistan is often done through unstructured WhatsApp messages, phone calls, and social media posts. These methods create:
                         </p>
-                        <ul className="list-disc list-inside text-gray-700 space-y-2 ml-2 marker:text-gray-400">
+                        <ul className="list-disc list-inside text-gray-700 space-y-1 ml-2 marker:text-[#f9baba]">
                             <li>Users must read long messages to identify donors</li>
                             <li>No visual sense of distance or location</li>
                             <li>Information is scattered and difficult to process quickly</li>
@@ -44,14 +40,12 @@ function About() {
                     </div>
                 </section>
 
-                {/* Key Features */}
                 <section>
                     <h3 className="text-2xl font-bold mb-6 text-center">Key Features</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        
-                        {/* Feature 1 */}
+
                         <div className="bg-[#F0FFF4] border border-[#E0FFE8] rounded-xl p-6">
-                            <div className="flex justify-between items-start mb-4">
+                            <div className="flex justify-between mb-4">
                                 <h4 className="font-bold text-lg leading-tight w-2/3">Medical-Minimalist UI</h4>
                                 <Icon icon="mdi:pulse" className="w-6 h-6 text-green-400" />
                             </div>
@@ -60,9 +54,8 @@ function About() {
                             </p>
                         </div>
 
-                        {/* Feature 2 */}
                         <div className="bg-[#F0F7FF] border border-[#E0EFFF] rounded-xl p-6">
-                            <div className="flex justify-between items-start mb-4">
+                            <div className="flex justify-between mb-4">
                                 <h4 className="font-bold text-lg leading-tight w-2/3">Interactive Geolocation</h4>
                                 <Icon icon="mdi:map-marker-outline" className="w-6 h-6 text-blue-400" />
                             </div>
@@ -71,9 +64,8 @@ function About() {
                             </p>
                         </div>
 
-                        {/* Feature 3 */}
                         <div className="bg-[#FFF0F0] border border-[#FFE0E0] rounded-xl p-6">
-                            <div className="flex justify-between items-start mb-4">
+                            <div className="flex justify-between mb-4">
                                 <h4 className="font-bold text-lg leading-tight w-2/3">One-Click Emergency Alert</h4>
                                 <Icon icon="mdi:clock-outline" className="w-6 h-6 text-red-400" />
                             </div>
@@ -85,12 +77,10 @@ function About() {
                     </div>
                 </section>
 
-                {/* Who We Serve */}
                 <section>
                     <h3 className="text-2xl font-bold mb-6 text-center">Who We Serve</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         
-                        {/* Users 1 */}
                         <div className="border border-gray-200 rounded-xl p-6 flex flex-col justify-between">
                             <div>
                                 <Icon icon="mdi:account-group" className="w-8 h-8 text-indigo-500 mb-4" />
@@ -102,7 +92,6 @@ function About() {
                             </ul>
                         </div>
 
-                        {/* Users 2 */}
                         <div className="border border-gray-200 rounded-xl p-6 flex flex-col justify-between">
                             <div>
                                 <Icon icon="mdi:heart" className="w-8 h-8 text-pink-500 mb-4" />

@@ -24,15 +24,17 @@ function Footer() {
 
                 <div className='flex flex-col  w-60 gap-2'>
                     <div className='flex items-center'>Quick Links</div>
-                    <NavLink to="/dashboard" className={({isActive})=> isActive?'text-blood-primary':' text-gray-400'}>
-                        <div className='text-[0.87rem] font-light'>Find donors</div>
+                    <NavLink to="/dashboard" className={({ isActive }) => isActive ? 'text-blood-primary' : ' text-gray-400'}>
+                        <div className='text-[0.87rem] font-light'>Find Donors</div>
                     </NavLink>
 
-                    <NavLink to="/register-donor" className={({isActive})=> isActive?'text-blood-primary':' text-gray-400'}>
-                        <div className='text-[0.87rem] font-light'>Register as Donors</div>
+                    <NavLink to="/register-donor" className={({ isActive }) => isActive ? 'text-blood-primary' : ' text-gray-400'}>
+                        <div className='text-[0.87rem] font-light'>Register As Donors</div>
+                    </NavLink>
+                    <NavLink to="/about" className={({ isActive }) => isActive ? 'text-blood-primary' : ' text-gray-400'}>
+                        <div className='text-[0.87rem] font-light'>About Us</div>
                     </NavLink>
 
-                    <div className='text-[0.87rem] font-light text-gray-400'>About us</div>
                     <div className='text-[0.87rem] font-light text-gray-400'>Help & FAQ</div>
                 </div>
 
@@ -81,7 +83,7 @@ function Footer() {
                 </div>
 
                 <div className='flex flex-row items-center'>
-                    made with {' '}<Icon icon="mdi:heart" className='w-4 h-4 text-blood-primary mx-3px' /> {' '} for saving lives
+                    Made with {' '}<Icon icon="mdi:heart" className='w-4 h-4 text-blood-primary mx-3px' /> {' '} for saving lives
                 </div>
             </div>
 
