@@ -1,4 +1,4 @@
-export const dummyNotifications = [
+export const d_Notifications = [
   {
     id: 1,
     type: "Emergency",
@@ -6,7 +6,7 @@ export const dummyNotifications = [
     description: "O+ blood needed in Gulberg area. 5 km from your location.",
     time: "5 min ago",
     unread: true,
-    requiresResponse: true,
+    response: true,
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const dummyNotifications = [
     description: "Someone has requested your assistance for blood donation.",
     time: "1 hour ago",
     unread: true,
-    requiresResponse: true,
+    response: true,
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const dummyNotifications = [
     description: "You are now eligible to donate blood again.",
     time: "2 days ago",
     unread: false,
-    requiresResponse: false,
+    response: false,
   },
   {
     id: 4,
@@ -33,6 +33,6 @@ export const dummyNotifications = [
     description: "A+ blood needed in Model Town area.",
     time: "1 week ago",
     unread: false,
-    requiresResponse: false,
+    response: false,
   }
 ];
