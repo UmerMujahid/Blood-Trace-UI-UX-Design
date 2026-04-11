@@ -36,7 +36,9 @@ function Footer() {
                     </NavLink>
                    
 
-                    <div className='text-[0.87rem] font-light text-gray-400'>Help & FAQ</div>
+                    <NavLink to="/help" className={({isActive})=> isActive?'text-blood-primary':' text-gray-400'}>
+                        <div className='text-[0.87rem] font-light'>Help & FAQ</div>
+                    </NavLink>
                 </div>
 
                 <div className='flex flex-col w-60 gap-2'>

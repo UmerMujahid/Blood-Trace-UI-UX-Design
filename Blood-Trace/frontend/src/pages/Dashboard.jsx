@@ -18,8 +18,8 @@ function Dashboard() {
     const [showDonor, setShowDonor] = useState(undefined);
     const [receipentBloodType, setReceipentBloodType] = useState(undefined);
 
-    const latitude = 31.5204
-    const longitude = 74.3587
+    let latitude = 31.5204
+    let longitude = 74.3587
 
     receipentBloodType && navigator.geolocation.getCurrentPosition((pos) => {
         latitude = pos.coords.latitude
