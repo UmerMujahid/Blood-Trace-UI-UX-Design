@@ -47,13 +47,15 @@ function Navbar() {
                     <div className='text-sm font-medium'>About</div>
                 </div>
 
-                <div className='flex justify-center items-center gap-1.5'>
-                    <Icon
-                        icon='material-symbols:help-outline'
-                        className='text-black mr-1 w-5.5 h-5.5'
-                    ></Icon>
-                    <div className='text-sm font-medium'>Help</div>
-                </div>
+                <NavLink to="/help" className={({isActive})=>`${isActive?'bg-blood-primary text-white p-1 px-2 rounded-sm':''}`}>
+                    <div className='flex justify-center items-center gap-1.5'>
+                        <Icon
+                            icon='material-symbols:help-outline'
+                            className='mr-1 w-5.5 h-5.5'
+                        ></Icon>
+                        <div className='text-sm font-medium'>Help</div>
+                    </div>
+                </NavLink>
 
                 <div className='flex justify-center items-center gap-1.5'>
                     <Icon
