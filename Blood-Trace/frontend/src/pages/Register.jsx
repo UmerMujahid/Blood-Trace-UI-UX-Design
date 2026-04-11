@@ -9,18 +9,14 @@ function Register() {
 
     const handleRegister = (e) => {
         e.preventDefault();
-        
-        // Mock successful registration
         setSuccessMsg(true);
-
-        // Redirect to dashboard after a brief delay
         setTimeout(() => {
             navigate('/dashboard');
         }, 1500);
     };
 
     return (
-        <div className="flex justify-center items-center font-sans mt-[-95px] pt-10 min-h-screen bg-[#f9f9f9]">
+        <div className="flex justify-center items-center font-sans mt-[-75px] pt-13 mb-[-20px] min-h-screen bg-[#f9f9f9]">
             <div className="w-full max-w-sm bg-white p-8 border border-gray-200 rounded-lg shadow-sm">
                 <h1 className="text-2xl font-bold text-center text-gray-900 mb-6">Create Account</h1>
                 

@@ -3,24 +3,20 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
     const navigate = useNavigate();
-    const [identifier, setIdentifier] = useState(''); // Handles both username or email
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [successMsg, setSuccessMsg] = useState(false);
 
     const handleLogin = (e) => {
         e.preventDefault();
-        
-        // Mock successful login
         setSuccessMsg(true);
-
-        // Redirect to dashboard after a brief delay
         setTimeout(() => {
             navigate('/dashboard');
         }, 1500);
     };
 
     return (
-        <div className="flex justify-center items-center font-sans mt-[-95px] pt-10 min-h-screen bg-[#f9f9f9]">
+        <div className="flex justify-center items-center font-sans mt-[-75px] pt-13 mb-[-20px] min-h-screen bg-[#f9f9f9]">
             <div className="w-full max-w-sm bg-white p-8 border border-gray-200 rounded-lg shadow-sm">
                 <h1 className="text-2xl font-bold text-center text-gray-900 mb-6">Welcome Back</h1>
                 
@@ -36,8 +32,8 @@ function Login() {
                         <input 
                             type="text" 
                             required
-                            value={identifier}
-                            onChange={(e) => setIdentifier(e.target.value)}
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
                             className="w-full border border-gray-300 rounded-md p-2 text-sm focus:outline-none focus:ring-1 focus:ring-red-500"
                             placeholder="Enter username or email"
                         />
