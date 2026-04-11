@@ -6,6 +6,8 @@ import Dashboard from './pages/Dashboard'
 import RegisterDonor from './pages/RegisterDonor'
 import About from './pages/About'
 import Notifications from './pages/Notifications'
+import Login from './pages/Login'
+import Register from './pages/Register'
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
             <Route path="register-donor" element={<RegisterDonor />} />
             <Route path="about" element={<About />} />
             <Route path="notifications" element={<Notifications />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
           </Route>
         </Routes>
       </BrowserRouter>

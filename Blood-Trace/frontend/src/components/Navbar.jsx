@@ -22,7 +22,16 @@ function Navbar() {
             </NavLink>
 
 
-            <div className='flex gap-6 justify-center items-center'>
+            <div className='flex gap-6 justify-center items-center mr-8'>
+
+                <div className='flex items-center gap-3 border-r border-gray-300 pr-4 mr-2'>
+                    <NavLink to="/login" className={({ isActive }) => `${isActive ? 'bg-blood-primary text-white p-1 px-2 rounded-sm' : ""}`} >
+                        <div className={`text-sm font-medium `}>Log In</div>
+                    </NavLink>
+                    <NavLink to="/register" className={({ isActive }) => `${isActive ? 'bg-blood-primary text-white p-1 px-2 rounded-sm' : "text-blood-primary"}`} >
+                        <div className={`text-sm font-medium `}>Sign Up</div>
+                    </NavLink>
+                </div>
 
                 <NavLink to="/dashboard" className={({ isActive }) => `${isActive ? 'bg-blood-primary text-white p-1 px-2 rounded-sm' : ""}`} >
                     <div className={`text-sm font-medium `}>Find Donors</div>
