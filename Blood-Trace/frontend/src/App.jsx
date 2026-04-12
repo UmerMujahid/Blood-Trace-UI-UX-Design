@@ -11,6 +11,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Help from './pages/Help'
 import AccessibilitySettings from './pages/AccessibilitySettings'
+import Profile from './pages/Profile'
 
 function App() {
   useEffect(() => {
@@ -45,6 +46,7 @@ function App() {
             <Route path="register" element={<Register />} />
             <Route path="help" element={<Help />} />
             <Route path="accessibility" element={<AccessibilitySettings />} />
+            <Route path="profile" element={<Profile />} />
           </Route>
         </Routes>
       </BrowserRouter>

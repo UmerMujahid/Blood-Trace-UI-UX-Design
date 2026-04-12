@@ -58,7 +58,7 @@ function Navbar() {
                     </div>
                 </NavLink>
 
-                <NavLink to="/help" className={({isActive})=>`${isActive?'bg-blood-primary text-white p-1 px-2 rounded-sm':''}`}>
+                <NavLink to="/help" className={({ isActive }) => `${isActive ? 'bg-blood-primary text-white p-1 px-2 rounded-sm' : ''}`}>
                     <div className='flex justify-center items-center gap-1.5'>
                         <Icon
                             icon='material-symbols:help-outline'
@@ -97,12 +97,16 @@ function Navbar() {
                         />
                     </div>
 
-                    <div className='flex justify-center items-center gap-1.5'>
-                        <Icon
-                            icon='iconamoon:profile'
-                            className='text-black mr-1 w-5.5 h-5.5'
-                        />
-                    </div>
+                    <NavLink to="/profile" className={({ isActive }) => `${isActive ? 'bg-blood-primary text-white p-1 px-2 rounded-sm' : ''}`} >
+                        {({ isActive }) => (
+                            <div className='flex justify-center items-center gap-1.5 p-1'>
+                                <Icon
+                                    icon='iconamoon:profile'
+                                    className={`mr-1 w-5.5 h-5.5 ${isActive ? 'text-white' : 'text-black'}`}
+                                />
+                            </div>
+                        )}
+                    </NavLink>
                 </div>
 
             </div>
