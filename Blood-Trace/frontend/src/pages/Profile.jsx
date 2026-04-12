@@ -1,9 +1,66 @@
+import { useState, useEffect } from 'react'
 import { Icon } from '@iconify/react'
 import ToggleSwitch from '../components/ToggleSwitch'
 
 function Profile() {
+    const [fullName, setFullName] = useState(() => localStorage.getItem('profile_fullName') || "Umar Karamat");
+    const [email, setEmail] = useState(() => localStorage.getItem('profile_email') || "umer123@gmail.com");
+    const [phone, setPhone] = useState(() => localStorage.getItem('profile_phone') || "+92 300 1234567");
+    const [bloodType, setBloodType] = useState(() => localStorage.getItem('profile_bloodType') || "AB-");
+    const [city, setCity] = useState(() => localStorage.getItem('profile_city') || "Lahore");
+    const [area, setArea] = useState(() => localStorage.getItem('profile_area') || "Gulberg");
+    const [lastDonation, setLastDonation] = useState(() => localStorage.getItem('profile_lastDonation') || "2023-11-15");
+    
+    // Toggles
+    const [emailNotif, setEmailNotif] = useState(() => localStorage.getItem('profile_emailNotif') !== 'false'); // default true
+    const [smsNotif, setSmsNotif] = useState(() => localStorage.getItem('profile_smsNotif') === 'true');
+    const [pushNotif, setPushNotif] = useState(() => localStorage.getItem('profile_pushNotif') === 'true');
+    const [available, setAvailable] = useState(() => localStorage.getItem('profile_available') === 'true');
+
+    const [showPopup, setShowPopup] = useState(false);
+
+    // Calculate days since last donation dynamically
+    const daysSinceDonation = lastDonation 
+        ? Math.max(0, Math.floor((new Date() - new Date(lastDonation)) / (1000 * 60 * 60 * 24)))
+        : 0;
+
+    // Handle the toast popup timeout robustly
+    useEffect(() => {
+        let timer;
+        if (showPopup) {
+            timer = setTimeout(() => {
+                setShowPopup(false);
+            }, 3000);
+        }
+        return () => clearTimeout(timer);
+    }, [showPopup]);
+
+    const handleSave = () => {
+        localStorage.setItem('profile_fullName', fullName);
+        localStorage.setItem('profile_email', email);
+        localStorage.setItem('profile_phone', phone);
+        localStorage.setItem('profile_bloodType', bloodType);
+        localStorage.setItem('profile_city', city);
+        localStorage.setItem('profile_area', area);
+        localStorage.setItem('profile_lastDonation', lastDonation);
+        localStorage.setItem('profile_emailNotif', emailNotif);
+        localStorage.setItem('profile_smsNotif', smsNotif);
+        localStorage.setItem('profile_pushNotif', pushNotif);
+        localStorage.setItem('profile_available', available);
+
+        setShowPopup(true);
+    };
+
     return (
-        <div className="min-h-screen bg-[#f5f5f5] flex flex-col items-center py-10 px-4">
+        <div className="min-h-screen bg-[#f5f5f5] flex flex-col items-center py-10 px-4 relative">
+            {/* Success Popup */}
+            {showPopup && (
+                <div className="fixed top-10 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2 z-[9999] transition-all duration-300">
+                    <Icon icon="lucide:check-circle" className="w-5 h-5" />
+                    <span>Profile saved successfully!</span>
+                </div>
+            )}
+
             {/* Header */}
             <div className="flex flex-col items-center gap-3 mb-8">
                 <div className="w-16 h-16 rounded-full bg-blood-primary flex items-center justify-center shadow-md">
@@ -22,19 +79,35 @@ function Profile() {
                     <div className="bg-white rounded-2xl p-6 shadow-sm">
                         <div className="flex items-center gap-2 mb-4 text-blood-primary">
                             <Icon icon="lucide:user" className="w-5 h-5" />
+                            <h2 className="text-[1.05rem] font-bold text-gray-900 ml-1">Personal Information</h2>
                         </div>
                         <div className="flex flex-col gap-4">
                             <div>
                                 <label className="block text-[0.85rem] font-bold text-gray-900 mb-1.5">Full Name</label>
-                                <input type="text" defaultValue="Umar Karamat" className="w-full bg-[#EFEFEF] rounded-lg p-3 text-[0.85rem] text-gray-700 font-medium focus:outline-none" readOnly />
+                                <input 
+                                    type="text" 
+                                    value={fullName}
+                                    onChange={(e) => setFullName(e.target.value)} 
+                                    className="w-full bg-[#EFEFEF] border border-transparent rounded-lg p-3 text-[0.85rem] text-gray-700 font-medium focus:outline-none focus:border-blood-primary/50 transition-colors" 
+                                />
                             </div>
                             <div>
                                 <label className="block text-[0.85rem] font-bold text-gray-900 mb-1.5">E-mail Address</label>
-                                <input type="email" defaultValue="umer123@gmail.com" className="w-full bg-[#EFEFEF] rounded-lg p-3 text-[0.85rem] text-gray-700 font-medium focus:outline-none" readOnly />
+                                <input 
+                                    type="email" 
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)} 
+                                    className="w-full bg-[#EFEFEF] border border-transparent rounded-lg p-3 text-[0.85rem] text-gray-700 font-medium focus:outline-none focus:border-blood-primary/50 transition-colors" 
+                                />
                             </div>
                             <div>
                                 <label className="block text-[0.85rem] font-bold text-gray-900 mb-1.5">Phone Number</label>
-                                <input type="text" defaultValue="+92 300 1234567" className="w-full bg-[#EFEFEF] rounded-lg p-3 text-[0.85rem] text-gray-700 font-medium focus:outline-none" readOnly />
+                                <input 
+                                    type="tel" 
+                                    value={phone}
+                                    onChange={(e) => setPhone(e.target.value)} 
+                                    className="w-full bg-[#EFEFEF] border border-transparent rounded-lg p-3 text-[0.85rem] text-gray-700 font-medium focus:outline-none focus:border-blood-primary/50 transition-colors" 
+                                />
                             </div>
                         </div>
                     </div>
@@ -43,14 +116,18 @@ function Profile() {
                     <div className="bg-white rounded-2xl p-6 shadow-sm">
                         <div className="flex items-center gap-2 mb-4">
                             <Icon icon="lucide:droplet" className="w-5 h-5 text-blood-primary" />
-                            <h2 className="text-[1.05rem] font-bold text-gray-900">Blood & Location Information</h2>
+                            <h2 className="text-[1.05rem] font-bold text-gray-900 ml-1">Blood & Location Information</h2>
                         </div>
                         
                         <div className="mb-4">
                             <label className="block text-[0.85rem] font-medium text-gray-800 mb-2">Blood Type</label>
                             <div className="grid grid-cols-4 gap-3">
                                 {['O-', 'O+', 'A-', 'A+', 'B-', 'B+', 'AB-', 'AB+'].map((type) => (
-                                    <div key={type} className={`py-2 rounded-lg flex items-center justify-center font-bold text-[0.9rem] border cursor-pointer ${type === 'AB-' ? 'bg-blood-primary text-white border-blood-primary' : 'bg-[#EFEFEF] text-gray-800 border-transparent hover:bg-gray-200'}`}>
+                                    <div 
+                                        key={type} 
+                                        onClick={() => setBloodType(type)}
+                                        className={`py-2 rounded-lg flex items-center justify-center font-bold text-[0.9rem] border cursor-pointer transition-colors ${bloodType === type ? 'bg-blood-primary text-white border-blood-primary' : 'bg-[#EFEFEF] text-gray-800 border-transparent hover:bg-gray-200'}`}
+                                    >
                                         {type}
                                     </div>
                                 ))}
@@ -60,17 +137,32 @@ function Profile() {
                         <div className="grid grid-cols-2 gap-4 mb-4">
                             <div>
                                 <label className="block text-[0.85rem] font-medium text-gray-800 mb-1.5">City</label>
-                                <input type="text" defaultValue="Lahore" className="w-full bg-[#EFEFEF] rounded-lg p-3 text-[0.85rem] text-gray-700 font-medium focus:outline-none" readOnly />
+                                <input 
+                                    type="text" 
+                                    value={city}
+                                    onChange={(e) => setCity(e.target.value)} 
+                                    className="w-full bg-[#EFEFEF] border border-transparent rounded-lg p-3 text-[0.85rem] text-gray-700 font-medium focus:outline-none focus:border-blood-primary/50 transition-colors" 
+                                />
                             </div>
                             <div>
                                 <label className="block text-[0.85rem] font-medium text-gray-800 mb-1.5">Area/Locality</label>
-                                <input type="text" defaultValue="Gulberg" className="w-full bg-[#EFEFEF] rounded-lg p-3 text-[0.85rem] text-gray-700 font-medium focus:outline-none" readOnly />
+                                <input 
+                                    type="text" 
+                                    value={area}
+                                    onChange={(e) => setArea(e.target.value)}
+                                    className="w-full bg-[#EFEFEF] border border-transparent rounded-lg p-3 text-[0.85rem] text-gray-700 font-medium focus:outline-none focus:border-blood-primary/50 transition-colors" 
+                                />
                             </div>
                         </div>
                         
                         <div>
                             <label className="block text-[0.85rem] font-medium text-gray-800 mb-1.5">Last Donation Date (Optional)</label>
-                            <input type="text" defaultValue="11/15/2023" className="w-full bg-[#EFEFEF] rounded-lg p-3 text-[0.85rem] text-gray-700 font-medium focus:outline-none" readOnly />
+                            <input 
+                                type="date" 
+                                value={lastDonation}
+                                onChange={(e) => setLastDonation(e.target.value)} 
+                                className="w-full bg-[#EFEFEF] border border-transparent rounded-lg p-3 text-[0.85rem] text-gray-700 font-medium focus:outline-none focus:border-blood-primary/50 transition-colors" 
+                            />
                         </div>
                     </div>
 
@@ -78,7 +170,7 @@ function Profile() {
                     <div className="bg-white rounded-2xl p-6 shadow-sm">
                         <div className="flex items-center gap-2 mb-4">
                             <Icon icon="lucide:bell" className="w-5 h-5 text-blood-primary" />
-                            <h2 className="text-[1.05rem] font-bold text-gray-900">Notification Preferences</h2>
+                            <h2 className="text-[1.05rem] font-bold text-gray-900 ml-1">Notification Preferences</h2>
                         </div>
                         
                         <div className="flex flex-col gap-3">
@@ -87,27 +179,30 @@ function Profile() {
                                     <div className="font-bold text-[0.85rem] text-gray-900">Email notifications</div>
                                     <div className="text-[0.75rem] text-gray-500 font-medium">Receive alerts via email</div>
                                 </div>
-                                <ToggleSwitch isOn={false} setIsOn={() => {}} />
+                                <ToggleSwitch isOn={emailNotif} setIsOn={setEmailNotif} />
                             </div>
                             <div className="flex items-center justify-between bg-[#EFEFEF] rounded-xl p-4 border border-transparent">
                                 <div>
                                     <div className="font-bold text-[0.85rem] text-gray-900">SMS notifications</div>
                                     <div className="text-[0.75rem] text-gray-500 font-medium">Receive alerts via SMS</div>
                                 </div>
-                                <ToggleSwitch isOn={false} setIsOn={() => {}} />
+                                <ToggleSwitch isOn={smsNotif} setIsOn={setSmsNotif} />
                             </div>
                             <div className="flex items-center justify-between bg-[#EFEFEF] rounded-xl p-4 border border-transparent">
                                 <div>
                                     <div className="font-bold text-[0.85rem] text-gray-900">Push notifications</div>
                                     <div className="text-[0.75rem] text-gray-500 font-medium">Receive in-app alerts</div>
                                 </div>
-                                <ToggleSwitch isOn={false} setIsOn={() => {}} />
+                                <ToggleSwitch isOn={pushNotif} setIsOn={setPushNotif} />
                             </div>
                         </div>
                     </div>
                     
                     {/* Save Changes Button */}
-                    <button className="w-full bg-blood-primary hover:bg-red-700 text-white font-medium text-[1.05rem] py-3.5 rounded-xl transition-colors duration-200 mt-2">
+                    <button 
+                        onClick={handleSave}
+                        className="w-full bg-blood-primary hover:bg-red-700 text-white font-medium text-[1.05rem] py-3.5 rounded-xl transition-colors duration-200 mt-2 px-6"
+                    >
                         Save Changes
                     </button>
                     
@@ -120,10 +215,10 @@ function Profile() {
                         <h3 className="font-bold text-[1rem] text-gray-900 mb-4">Availability Status</h3>
                         <div className="flex items-center justify-between bg-[#EFEFEF] rounded-xl p-3 px-4 mb-4">
                             <span className="text-[0.85rem] text-gray-700 font-medium">Available to donate</span>
-                            <ToggleSwitch isOn={false} setIsOn={() => {}} />
+                            <ToggleSwitch isOn={available} setIsOn={setAvailable} />
                         </div>
-                        <div className="w-full py-2.5 bg-[#ccffcc] text-green-600 text-center rounded-xl text-[0.8rem] font-bold">
-                            Available
+                        <div className={`w-full py-2.5 text-center rounded-xl text-[0.8rem] font-bold transition-colors ${available ? 'bg-[#ccffcc] text-green-700' : 'bg-gray-200 text-gray-600'}`}>
+                            {available ? 'Available' : 'Unavailable'}
                         </div>
                     </div>
 
@@ -132,10 +227,10 @@ function Profile() {
                         <h3 className="font-bold text-[1rem] text-gray-900 mb-4">Donation Eligibility</h3>
                         <div className="flex items-center justify-between bg-[#EFEFEF] rounded-xl p-3 px-4 mb-4">
                             <span className="text-[0.85rem] text-gray-700 font-medium w-2/3 leading-tight">Days since last<br/>donation</span>
-                            <span className="text-[1.05rem] font-bold text-gray-900">109</span>
+                            <span className="text-[1.05rem] font-bold text-gray-900">{daysSinceDonation}</span>
                         </div>
-                        <div className="w-full py-2.5 bg-[#ccffcc] text-green-600 text-center rounded-xl text-[0.8rem] font-bold">
-                            Eligible to donate
+                        <div className={`w-full py-2.5 text-center rounded-xl text-[0.8rem] font-bold transition-colors ${daysSinceDonation >= 90 ? 'bg-[#ccffcc] text-green-700' : 'bg-[#fff0f0] text-blood-primary'}`}>
+                            {daysSinceDonation >= 90 ? 'Eligible to donate' : 'Ineligible to donate'}
                         </div>
                     </div>
 
@@ -146,7 +241,7 @@ function Profile() {
                         <div className="flex flex-col gap-3">
                             <div className="flex items-center justify-between pb-3">
                                 <span className="text-[0.85rem] text-gray-700 font-medium">Profile Verified</span>
-                                <span className="bg-[#ccffcc] text-green-600 px-3 py-1 rounded-md text-[0.7rem] font-bold">Verified</span>
+                                <span className="bg-[#ccffcc] text-green-700 px-3 py-1 rounded-md text-[0.7rem] font-bold">Verified</span>
                             </div>
                             <div className="flex items-center justify-between pb-3">
                                 <span className="text-[0.85rem] text-gray-700 font-medium">Total Donations</span>

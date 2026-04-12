@@ -78,34 +78,17 @@ function Navbar() {
                     </div>
                 </NavLink>
 
-                <div className='flex gap-2.5'>
-                    <NavLink to="/accessibility" className={({ isActive }) => `${isActive ? 'bg-blood-primary text-white p-1 px-2 rounded-sm' : ''}`} >
-                        {({ isActive }) => (
-                            <div className='flex justify-center items-center gap-1.5 p-1'>
-                                <Icon
-                                    icon='meteor-icons:gear'
-                                    className={`mr-1 w-5.5 h-5.5 ${isActive ? 'text-white' : 'text-black'}`}
-                                />
-                            </div>
-                        )}
+                <div className='flex items-center gap-2'>
+                    <NavLink to="/accessibility" className={({ isActive }) => `flex justify-center items-center w-9 h-9 rounded-md transition-colors ${isActive ? 'bg-blood-primary text-white' : 'text-gray-800 hover:bg-gray-100'}`} >
+                        <Icon icon='meteor-icons:gear' className="w-5.5 h-5.5" />
                     </NavLink>
 
-                    <NavLink to="/admin" className={({ isActive }) => `flex justify-center items-center gap-1.5 transition-colors ${isActive ? 'text-[#D92D20]' : 'text-gray-800 hover:text-black'}`} title="Admin Dashboard">
-                        <Icon
-                            icon='material-symbols:widgets-outline-rounded'
-                            className='mr-1 w-5.5 h-5.5'
-                        />
+                    <NavLink to="/admin" className={({ isActive }) => `flex justify-center items-center w-9 h-9 rounded-md transition-colors ${isActive ? 'bg-blood-primary text-white' : 'text-gray-800 hover:bg-gray-100'}`} title="Admin Dashboard">
+                        <Icon icon='material-symbols:widgets-outline-rounded' className="w-5.5 h-5.5" />
                     </NavLink>
 
-                    <NavLink to="/profile" className={({ isActive }) => `${isActive ? 'bg-blood-primary text-white p-1 px-2 rounded-sm' : ''}`} >
-                        {({ isActive }) => (
-                            <div className='flex justify-center items-center gap-1.5 p-1'>
-                                <Icon
-                                    icon='iconamoon:profile'
-                                    className={`mr-1 w-5.5 h-5.5 ${isActive ? 'text-white' : 'text-black'}`}
-                                />
-                            </div>
-                        )}
+                    <NavLink to="/profile" className={({ isActive }) => `flex justify-center items-center w-9 h-9 rounded-md transition-colors ${isActive ? 'bg-blood-primary text-white' : 'text-gray-800 hover:bg-gray-100'}`} >
+                        <Icon icon='iconamoon:profile' className="w-5.5 h-5.5" />
                     </NavLink>
                 </div>
 
