@@ -63,7 +63,7 @@ function RegisterDonor() {
     }
 
     return (
-        <main className="relative flex flex-col gap-5 justify-center items-center p-4">
+        <main className="relative flex flex-col gap-5 justify-center items-center p-4 bg-[#fdf0f0]">
 
 
             {!registrationSuccess && (

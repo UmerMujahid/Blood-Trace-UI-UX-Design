@@ -3,7 +3,8 @@
 @import "leaflet/dist/leaflet.css";
 
 @theme {
-    --font-main: "Roboto", sans-serif;
+    /* --font-main: "Roboto", sans-serif; */
+    --font-main: "Aeonik", "Inter", system-ui, sans-serif;
     --color-blood-primary: #D22828;
     --color-text-main:#000000;
     --color-footer-text: #FFFFFF;

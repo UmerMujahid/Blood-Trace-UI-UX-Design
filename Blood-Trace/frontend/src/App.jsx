@@ -4,6 +4,12 @@ import Layout from './pages/Layout'
 import Landing from './pages/Landing'
 import Dashboard from './pages/Dashboard'
 import RegisterDonor from './pages/RegisterDonor'
+import About from './pages/About'
+import Notifications from './pages/Notifications'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import AdminDashboard from './pages/AdminDashboard'
+import Help from './pages/Help'
 
 
 function App() {
@@ -16,6 +22,12 @@ function App() {
             <Route index element={<Landing />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="register-donor" element={<RegisterDonor />} />
+            <Route path="about" element={<About />} />
+            <Route path="notifications" element={<Notifications />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+            <Route path="help" element={<Help />} />
+            <Route path="admin" element={<AdminDashboard />} />
           </Route>
         </Routes>
       </BrowserRouter>
@@ -24,3 +36,4 @@ function App() {
 }
 
 export default App
+
