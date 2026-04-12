@@ -86,12 +86,12 @@ function Navbar() {
                         />
                     </div>
 
-                    <div className='flex justify-center items-center gap-1.5'>
+                    <NavLink to="/admin" className={({ isActive }) => `flex justify-center items-center gap-1.5 transition-colors ${isActive ? 'text-[#D92D20]' : 'text-gray-800 hover:text-black'}`} title="Admin Dashboard">
                         <Icon
                             icon='material-symbols:widgets-outline-rounded'
-                            className='text-black mr-1 w-5.5 h-5.5'
+                            className='mr-1 w-5.5 h-5.5'
                         />
-                    </div>
+                    </NavLink>
 
                     <div className='flex justify-center items-center gap-1.5'>
                         <Icon
