@@ -1,0 +1,5 @@
+{  
+  "buildCommand": "cd Blood-Trace/frontend && npm run build",  
+  "installCommand": "cd Blood-Trace/frontend && npm install",  
+  "outputDirectory": "Blood-Trace/frontend/dist"  
+}
