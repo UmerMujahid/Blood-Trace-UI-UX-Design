@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Icon } from '@iconify/react'
-import helpLogo from '../assets/images/help-logo.png'
+import helpLogo from '../assets/Images/help-logo.png'
 
 const faqData = [
     {
