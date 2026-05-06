@@ -52,7 +52,33 @@ function NotificationCard({ notif, delete_n, markAsRead }) {
 
                     <div className="flex-1">
                         <h3 className="font-bold text-gray-900 mb-1.5">{notif.title}</h3>
-                        <p className="text-gray-700 text-sm mb-4">{notif.description}</p>
+                        <p className="text-gray-700 text-sm mb-3">{notif.description}</p>
+
+                        {/* Contact & Location Details for Emergencies/Requests */}
+                        {(notif.phone || notif.email || notif.location) && (
+                            <div className="bg-gray-50 rounded-xl p-3.5 border border-gray-100 flex flex-col gap-2 mb-3 text-xs shadow-xs animate-in slide-in-from-top-1 duration-200">
+                                {notif.location && (
+                                    <div className="flex items-center gap-2 text-gray-700">
+                                        <Icon icon="akar-icons:location" className="w-4 h-4 text-blood-primary shrink-0" />
+                                        <span><strong>Location:</strong> {notif.location}</span>
+                                    </div>
+                                )}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-0.5">
+                                    {notif.phone && (
+                                        <div className="flex items-center gap-2 text-gray-700">
+                                            <Icon icon="solar:phone-calling-linear" className="w-4 h-4 text-green-600 shrink-0" />
+                                            <span><strong>Phone:</strong> {notif.phone}</span>
+                                        </div>
+                                    )}
+                                    {notif.email && (
+                                        <div className="flex items-center gap-2 text-gray-700">
+                                            <Icon icon="fluent:mail-24-regular" className="w-4 h-4 text-blue-500 shrink-0" />
+                                            <span className="truncate"><strong>Email:</strong> {notif.email}</span>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        )}
 
                         <div className="flex items-center gap-2 text-gray-500 text-xs mb-4">
                             <Icon icon="mdi:clock-outline" className="w-4 h-4" />

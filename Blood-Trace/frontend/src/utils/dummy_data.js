@@ -7,6 +7,9 @@ export const d_Notifications = [
     time: "5 min ago",
     unread: true,
     response: true,
+    phone: "+92 300 4567890",
+    email: "emergency.gulberg@bloodtrace.org",
+    location: "Gulberg III, Lahore (Near Al-Fateh Mall)"
   },
   {
     id: 2,
@@ -16,6 +19,9 @@ export const d_Notifications = [
     time: "1 hour ago",
     unread: true,
     response: true,
+    phone: "+92 321 9876543",
+    email: "fatima.noor@gmail.com",
+    location: "Johar Town Phase 1, Lahore"
   },
   {
     id: 3,
@@ -34,6 +40,9 @@ export const d_Notifications = [
     time: "1 week ago",
     unread: false,
     response: false,
+    phone: "+92 335 1112233",
+    email: "contact.modeltown@bloodtrace.org",
+    location: "Model Town C-Block, Lahore"
   }
 ];
 

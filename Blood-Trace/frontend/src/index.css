@@ -124,3 +124,44 @@ html.screen-reader-opt textarea::placeholder {
     color: #374151 !important; /* Darker, more legible placeholder */
     opacity: 1;
 }
+
+/* Custom dashboard font-size scaling rules (HCI request) */
+.dashboard-root-view .text-xs,
+.dashboard-root-view .text-\[0\.6rem\],
+.dashboard-root-view .text-\[0\.65rem\],
+.dashboard-root-view .text-\[0\.68rem\] {
+    font-size: 0.84rem !important;
+}
+.dashboard-root-view .text-\[0\.7rem\],
+.dashboard-root-view .text-\[0\.75rem\] {
+    font-size: 0.9rem !important;
+}
+.dashboard-root-view .text-\[0\.8rem\],
+.dashboard-root-view .text-sm {
+    font-size: 0.9rem !important;
+}
+.dashboard-root-view .text-\[0\.9rem\],
+.dashboard-root-view .text-\[1rem\],
+.dashboard-root-view .text-base {
+    font-size: 0.9rem !important;
+}
+.dashboard-root-view .text-lg {
+    font-size: 1.26rem !important;
+}
+.dashboard-root-view .text-xl {
+    font-size: 1.3rem !important;
+}
+.dashboard-root-view .text-2xl {
+    font-size: 1.68rem !important;
+}
+.dashboard-root-view .text-3xl {
+    font-size: 2.12rem !important;
+}
+.dashboard-root-view h3 {
+    font-size: 1.15rem !important;
+}
+.dashboard-root-view button,
+.dashboard-root-view input,
+.dashboard-root-view label {
+    font-size: 1.02rem !important;
+}

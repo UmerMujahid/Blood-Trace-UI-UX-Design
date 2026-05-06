@@ -133,6 +133,96 @@ const bloodDonors = [
         contactNumber: "+92 335 8899001",
         isAvailable: false,
         lastDonationDate: "2026-03-12"
+    },
+    {
+        id: 16,
+        name: "Saad Butt",
+        bloodType: "O-",
+        geolocation: [31.5150, 74.3120], // Garden Town
+        contactNumber: "+92 301 9991234",
+        isAvailable: true,
+        lastDonationDate: null
+    },
+    {
+        id: 17,
+        name: "Maria Khan",
+        bloodType: "A+",
+        geolocation: [31.5100, 74.2900], // Allama Iqbal Town
+        contactNumber: "+92 321 8887766",
+        isAvailable: true,
+        lastDonationDate: "2026-02-14"
+    },
+    {
+        id: 18,
+        name: "Fahad Shah",
+        bloodType: "B+",
+        geolocation: [31.5430, 74.3350], // Shadman II
+        contactNumber: "+92 345 5556677",
+        isAvailable: true,
+        lastDonationDate: "2026-01-20"
+    },
+    {
+        id: 19,
+        name: "Sidra Yusuf",
+        bloodType: "O+",
+        geolocation: [31.5380, 74.3720], // Garhi Shahu
+        contactNumber: "+92 300 2233441",
+        isAvailable: true,
+        lastDonationDate: "2025-12-15"
+    },
+    {
+        id: 20,
+        name: "Waleed Malik",
+        bloodType: "A-",
+        geolocation: [31.5450, 74.2650], // Sabzazar
+        contactNumber: "+92 312 4455112",
+        isAvailable: true,
+        lastDonationDate: null
+    },
+    {
+        id: 21,
+        name: "Tayyab Sheikh",
+        bloodType: "B-",
+        geolocation: [31.5620, 74.3980], // DHA Phase 1
+        contactNumber: "+92 333 7772211",
+        isAvailable: false,
+        lastDonationDate: "2026-03-01"
+    },
+    {
+        id: 22,
+        name: "Nimra Butt",
+        bloodType: "AB+",
+        geolocation: [31.5580, 74.3540], // Mughalpura
+        contactNumber: "+92 315 9900112",
+        isAvailable: true,
+        lastDonationDate: "2026-02-28"
+    },
+    {
+        id: 23,
+        name: "Haris Jamil",
+        bloodType: "O-",
+        geolocation: [31.4820, 74.3210], // Faisal Town
+        contactNumber: "+92 306 4441234",
+        isAvailable: true,
+        lastDonationDate: null
+    },
+    {
+        id: 24,
+        name: "Mahnoor Farooq",
+        bloodType: "B+",
+        geolocation: [31.4740, 74.3180], // Model Town Extension
+        contactNumber: "+92 322 5550099",
+        isAvailable: true,
+        lastDonationDate: "2025-11-10"
+    },
+    {
+        id: 25,
+        name: "Hassan Raza",
+        bloodType: "O+",
+        geolocation: [31.5280, 74.2850], // Gulshan-e-Ravi
+        contactNumber: "+92 304 8881234",
+        isAvailable: true,
+        lastDonationDate: "2026-03-10"
     }
 ];
 
