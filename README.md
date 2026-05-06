@@ -6,7 +6,7 @@
 
 ## 🖥️ Live Preview
 
-> Open `index.html` in your browser to launch the app. No build step required for the frontend.
+> Open https://blood-trace-design.vercel.app/ in your browser to launch the app. No build step required for the frontend.
 
 ---
 
